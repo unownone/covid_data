@@ -1,6 +1,5 @@
 from flask import Flask,jsonify
 from config import Config
-import scrape
 import requests
 import bs4
 import re
