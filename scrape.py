@@ -2,13 +2,12 @@ import requests
 import bs4
 import re
 from tqdm import tqdm
-from pymongo import MongoClient
+from flask import current_app as app
+from flask_pymongo import PyMongo
 from datetime import datetime,timedelta
 
-client = MongoClient('mongodb://admin:admin@127.0.0.1:27017/admin')
-#db name caseDetails 
-db = client.caseDetails
-covid_data = db.covid_data
+mongo = PyMongo(app)
+covid_data = mongo.db.covid_data.data
 
 EXP_HR = 5
 EXP_DAY = 0
