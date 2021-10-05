@@ -17,8 +17,13 @@ covid_data = mongo.db.covid_data.data
 def main():
     return jsonify(main_function())
 
-
-
+@app.route('/<name>')
+def getCustom(name):
+    data = main_function()
+    if name in data:
+        return jsonify(data[name])
+    else:
+        return jsonify({"err":"Not Found!"})
 
 
 EXP_HR = 5
