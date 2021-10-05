@@ -55,7 +55,7 @@ def snake_case(name):
     return re.sub(r'[ /]+', r'_', name).lower()
 
 def clean_data(text):
-    text = re.sub(r'(\t|\n| |\r|\xa0)+', r' ', text).upper()
+    text = re.sub(r'(\t|\n| |\r|\xa0)+', r' ', text).upper().replace(',','')
     return int(text.strip())
 
 def getCovidData():
