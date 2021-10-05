@@ -15,7 +15,7 @@ covid_data = mongo.db.covid_data.data
 
 @app.route('/covid',methods=['GET'])
 def main():
-    return jsonify(scrape.main_function())
+    return jsonify(main_function())
 
 
 
