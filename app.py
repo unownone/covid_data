@@ -13,7 +13,7 @@ mongo = PyMongo(app)
 covid_data = mongo.db.covid_data.data
 
 
-@app.route('/covid',methods=['GET'])
+@app.route('/',methods=['GET'])
 def main():
     return jsonify(main_function())
 
