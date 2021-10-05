@@ -56,7 +56,7 @@ def snake_case(name):
 
 def clean_data(text):
     text = re.sub(r'(\t|\n| |\r|\xa0)+', r' ', text).upper()
-    return text.strip()
+    return int(text.strip())
 
 def getCovidData():
     link ='https://www.worldometers.info/coronavirus/'
