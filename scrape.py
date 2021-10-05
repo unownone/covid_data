@@ -1,7 +1,6 @@
 import requests
 import bs4
 import re
-from tqdm import tqdm
 from flask import current_app as app
 from flask_pymongo import PyMongo
 from datetime import datetime,timedelta
@@ -59,11 +58,3 @@ def getCovidData():
         covid[snake_case(data[i+1].text)] = partial
     covid['dataname'] = 'covidData'
     return covid
-
-
-
-import time
-
-curr = time.time()
-main_function()
-print("Time taken: ", round((time.time()-curr),3),'seconds')
