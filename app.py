@@ -37,7 +37,7 @@ def main_function():
         if search['created_at']<datetime.now():
             data = getCovidData()
             data['created_at'] = datetime.now()+timedelta(minutes = EXP_MIN,hours = EXP_HR,days = EXP_DAY)
-            covid_data.update_one({'dataname':'covidData'},data)
+            covid_data.replace_one({'dataname':'covidData'},data,True)
             return data
         else:
             del search['_id']
